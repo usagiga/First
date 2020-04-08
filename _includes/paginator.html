@@ -1,0 +1,45 @@
+<section>
+    {% if paginator.total_posts == 0 %}
+    <p>There's still no post.</p>
+    {% else %}
+    {% for post in paginator.posts %}
+    <article>
+        <ul>
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <ul>
+                    <li>
+                        {{ post.date }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+    {% endfor %}
+    {% endif %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+<footer>
+    <p>
+        <!-- Pager (Previous) -->
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">&lt;</a>
+        {% endif %}
+
+        <!-- Pager (Number) -->
+        {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+        {% if page.url == trail.path %}
+        <strong>{{ trail.num }}</strong>
+        {% else %}
+        <a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        <!-- Pager (Next) -->
+        {% if paginator.next_page %}<a href="{{ paginator.next_page_path }}">&gt;</a>{% endif %}
+    </p>
+</footer>
+{% endif %}
