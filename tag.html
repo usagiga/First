@@ -1,0 +1,17 @@
+---
+layout: default_article
+---
+
+<header>
+    <h1>Tag</h1>
+</header>
+
+<section>
+    <article>
+        <ul>
+            {% for tag in site.tags %}
+            <li><a href="{{ tag[0] | url_encode }}">{{ tag[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>
