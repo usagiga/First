@@ -3,7 +3,11 @@ layout: default_article
 ---
 <header>
     <h1>{{ page.title }}</h1>
-    <p>Date : {{ page.date }}</p>
+    <p>
+        Date : {{ page.date }}
+        {% if page.categories %}<br />Categories: {% for cat in page.categories %}<a href="/category/{{ cat | url_encode }}">{{ cat }}</a> {% endfor %}{% endif %}
+        {% if page.tags %}<br />Tags: {% for tag in page.tags %}<a href="/tag/{{ tag | url_encode }}">{{ tag }}</a> {% endfor %}{% endif %}
+    </p>
 </header>
 <section>
     <article>
