@@ -1,0 +1,17 @@
+---
+layout: default_article
+---
+
+<header>
+    <h1>Tag</h1>
+</header>
+
+<section>
+    <article>
+        <ul>
+            {% for cat in site.categories %}
+            <li><a href="{{ cat[0] | url_encode }}">{{ cat[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>
