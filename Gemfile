@@ -14,6 +14,7 @@ gem "jekyll", "~> 4.0.0"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-paginate-v2"
+  gem "jekyll-feed"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

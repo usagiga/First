@@ -17,6 +17,7 @@ defaults:
 
 plugins:
   - jekyll-paginate-v2
+  - jekyll-feed
 
 pagination:
   enabled: true
